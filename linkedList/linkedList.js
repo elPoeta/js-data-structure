@@ -1,16 +1,11 @@
-class Node {
-  constructor(data, next = null) {
-    this.data = data;
-    this.next = next;
-  }
-}
+const Node = require('./node');
 
 class LinkedList {
   constructor() {
     this.head = null;
     this.size = 0;
   }
-  
+
   insertFirst(data) {
     this.head = new Node(data, this.head);
     this.size++;
@@ -19,7 +14,7 @@ class LinkedList {
   insertLast(data) {
     let node = new Node(data);
     let current;
-  
+
     if (!this.head) {
       this.head = node;
     } else {
@@ -51,9 +46,9 @@ class LinkedList {
     let count = 0;
 
     while (count < index) {
-      previous = current; 
+      previous = current;
       count++;
-      current = current.next; 
+      current = current.next;
     }
 
     node.next = current;
@@ -100,7 +95,7 @@ class LinkedList {
 
     this.size--;
   }
-  
+
   clearList() {
     this.head = null;
     this.size = 0;
@@ -110,7 +105,7 @@ class LinkedList {
     let current = this.head;
 
     while (current) {
-      console.log(`print: ${current.data}` );
+      console.log(`print: ${current.data}`);
       current = current.next;
     }
   }
